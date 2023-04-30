@@ -10,145 +10,153 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5611d082ea.js" crossorigin="anonymous"></script>
-    <title>Deal With Usman</title>
+    <title>Usman - Portfolio</title>
     <style>
-        @media only screen and (max-width: 770px) {
-            .container {
-                margin: 0 !important;
-            }
-
-            .card {
-                margin: 0 !important;
-            }
-            .carousel-inner img{
-                height: 400px;
-            }
-            #navbar{
-                position: relative;
-            }
-            #navbars::after{
-                content: 'Code with Usman';
-                color: white;
-                position: absolute;
-                font-size: 20px;
-                text-align: center;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                z-index: 200;
-            }
-
+        *{
+            scroll-behavior: smooth;
+            scroll-padding-top: 50px;
         }
+        body,.card{
+            color: white;
+            background-color: black;
+        }
+        .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1200;
+        background-color: black;
+        }
+
+        .ball {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+        animation: move 10s ease-in-out infinite;
+        }
+        
+
+        .loading-text {
+        font-weight: bolder;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: black;
+        text-align: center;
+        line-height: 60px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(-50%, -50%) translate(0, 0);
+            }
+            25% {
+                transform: translate(-50%, -50%) translate(calc(50% * cos(45deg)), calc(50% * sin(45deg)));
+            }
+            50% {
+                transform: translate(-50%, -50%) translate(50%, 0);
+            }
+            75% {
+                transform: translate(-50%, -50%) translate(calc(50% * cos(135deg)), calc(50% * sin(135deg)));
+            }
+            100% {
+                transform: translate(-50%, -50%) translate(0, 0);
+            }
+        }
+
+
+        .hidden { 
+        opacity: 0;
+        display: none;
+        transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        .slide img{
+            height: 90vh !important;
+        }
+        
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning fs-5">
+    <div class="preloader">
+        <div class="ball">
+          <span class="loading-text">Loading...</span>
+        </div>
+      </div>
+      
+      
+      
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-<!--             <a class="navbar-brand" href="#">CWU</a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/blog.html">Blog</a>
-                    </li> -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Projects
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
-                            
-                            
-                            
-                            
-                            
-                            <li><a class="dropdown-item" href="https://usmansarwar036.github.io/tour-web/1-tour%20website"
-                                    target="_blank">Usman Tour & travel</a></li>
-                            <li><a class="dropdown-item" href="https://usmansarwar036.github.io/UO/UO"
-                                    target="_blank">University Of Okara</a></li>
-                            <li><a class="dropdown-item" href="https://usmansarwar036.github.io/Gym/26.Gym%20Website"
-                                    target="_blank">Usman Fitness Club</a></li>
-                            <li><a class="dropdown-item" href="https://usmansarwar036.github.io/Hotel-M/Hotel"
-                                    target="_blank">Usman's Hotel Managemnt</a></li>
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-danger " type="submit">Search</button>
-                </form>
-            </div>
+          <a class="navbar-brand" href="#">Usman</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#contact">Contact</a>
+              </li>
+              
+              
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
     </nav>
     
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="1.jpg" class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h2>Usman</h2>
+            <h5>Web Developer</h5>
         </div>
-                <div id="navbars"></div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://source.unsplash.com/1600x600/?nature-dark,water-dark" class="d-block w-100 "
-                    alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 style=" font-weight: bold;">Code With Usman</h1>
-                    <p style="font-size: 25px; font-weight: bold;">I am a Graphic Desihner, Web Developer and a coder
-                    </p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1600x600/?nature-dark" class="d-block w-100 " alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 style=" font-weight: bold;">Code With Usman</h1>
-                    <p style="font-size: 25px; font-weight: bold;">I am a Graphic Desihner, Web Developer and a coder
-                    </p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1600x600/?nature-dark,forest-dark" class="d-block w-100 "
-                    alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 style=" font-weight: bold;">Code With Usman</h1>
-                    <p style="font-size: 25px; font-weight: bold;">I am a Graphic Desihner, Web Developer and a coder
-                    </p>
-                </div>
-            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+        <img src="2.jpg" class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h2>Usman</h2>
+            <h5>Software Developer</h5>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="3.jpeg" class="d-block w-100 " alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h2>Usman</h2>
+            <h5>WebApp Developer</h5>
+        </div>
+        </div>
     </div>
+    </div>
+
+    <div id="projects">
     
     <div class="row featurette d-flex justify-content-center align-items-center m-1">
         <h3 class="w-100 text-center mt-3 mb-2" style="font-size: 50px;">Projects</h3>
@@ -163,6 +171,7 @@
             <img class="img-fluid " src="https://source.unsplash.com/500x500/?tour" alt="">
         </div>
     </div>
+    <hr class="bg-light h-2">
     <div class="row featurette d-flex justify-content-center align-items-center m-1 mt-3">
         <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">University Website <br><span class="text-muted">See for yourself.</span>
@@ -174,6 +183,8 @@
             <img class="img-fluid" src="/projects/uo.jpg" alt="" style="width: 500px; height: 435px;">
         </div>
     </div>
+    <hr class="bg-light h-2">
+
     </div>
     <div class="row featurette d-flex justify-content-center align-items-center m-1 mt-3">
         <div class="col-md-7 order-md-1">
@@ -187,6 +198,8 @@
 
         </div>
     </div>
+    <hr class="bg-light h-2">
+
     <div class="row featurette d-flex justify-content-center align-items-center m-1 mt-3">
         <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">Usman's Hotel Management <br><span class="text-muted">Explore the world</span>
@@ -199,13 +212,16 @@
             <img class="img-fluid" src="https://source.unsplash.com/500x500/?hotel" alt="">
         </div>
     </div>
-    <div class="container d-flex justify-content-center align-content-center mt-2 flex-wrap">
-        <h3 class="w-100 text-center mt-3" style="font-size: 50px;">Contact me</h3>
+    <hr class="bg-light h-2">
+</div>
+
+    <div id="contact" class="container d-flex justify-content-center align-content-center mt-2 flex-wrap">
+        <h3 class="w-100 text-center mt-3" style="font-size: 50px;">Contact Us</h3>
         <div class="card m-1" style="width: 18rem;">
             <img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyNzA2NjIz&ixlib=rb-1.2.1&q=800&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400" class="card-img-top img-fluid mt-1" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Facebook</h5>
-                <p class="card-text">For any query, Contact me on Facebook.</p>
+                <p class="card-text">For any query, Contact us on Facebook.</p>
                 <a target="_blank" href="https://www.m.me/chusman.sarwar.1" class="btn btn-primary">Contact</a>
             </div>
         </div>
@@ -215,15 +231,15 @@
             <img src="https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyNzA2NzQ0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title">WhatsApp</h5>
-                <p class="card-text">For any query, Contact me on WhatsApp.</p>
-                <a target="_blank" href="https://api.whatsapp.com/send?phone=923099273790&text=Ask%20me%20any%20query%20about%20web%20development" class="btn btn-primary">Contact</a>
+                <p class="card-text">For any query, Contact us on WhatsApp.</p>
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=923244679006&text=Ask%20me%20any%20query%20about%20web%20development" class="btn btn-primary">Contact</a>
             </div>
         </div>
         <div class="card m-1" style="width: 18rem;">
             <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218fHx8fHx8fHwxNjIyNzA4OTcw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=500" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Gmail</h5>
-                <p class="card-text">For any query and order, Contact me on Gmail</p>
+                <p class="card-text">For any query and order, Contact us on Gmail</p>
                 <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=usmansarwar036@gmail.com&su=Web Development&body=I am very happy to contact you." target="_blank">Contact</a>
             </div>
         </div>
@@ -232,7 +248,7 @@
             <img src="data:image/png;base64,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" class="card-img-top img-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title">GitHub</h5>
-                <p class="card-text">to see my projects and for any query, Contact me on GitHub</p>
+                <p class="card-text">to see our projects and for any query, Contact us on GitHub</p>
                 <a target="_blank" href="https://github.com/usmansarwar036?tab=repositories" class="btn btn-primary">Contact</a>
             </div>
         
@@ -252,11 +268,132 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
+    <script>
+        window.addEventListener("load", function(){
+        loader = document.querySelector(".preloader");
+        loader.classList.add('hidden');
+        });
+        const preloader = document.querySelector(".preloader");
+        const balls = [];
+
+        var numBalls;
+        if (window.innerWidth < 850) {
+            numBalls = 5;
+        } else {
+            numBalls = 10;
+        }
+        // const numBalls = 10; // generate random number of balls
+        // const numBalls = Math.floor(Math.random() * 10) + 1; // generate random number of balls
+
+        for (let i = 0; i < numBalls; i++) {
+        const ball = document.createElement("div");
+        ball.classList.add("ball");
+        ball.style.background= getRandomColor();
+        ball.style.left = Math.floor(Math.random() * (preloader.clientWidth - ball.offsetWidth)) + "px";
+        ball.style.top = Math.floor(Math.random() * (preloader.clientHeight - ball.offsetHeight)) + "px";
+        preloader.appendChild(ball);
+        balls.push({
+            elem: ball,
+            x: parseInt(ball.style.left),
+            y: parseInt(ball.style.top),
+            xSpeed: getRandomSpeed(),
+            ySpeed: getRandomSpeed()
+        });
+        }
+        function getRandomColor() {
+        let color = "";
+        const minValue = 100;
+        const maxValue = 255;
+        
+        // Generate a random color that is not too dark
+        do {
+            const red = Math.floor(Math.random() * (maxValue - minValue) + minValue);
+            const green = Math.floor(Math.random() * (maxValue - minValue) + minValue);
+            const blue = Math.floor(Math.random() * (maxValue - minValue) + minValue);
+            color = `rgb(${red}, ${green}, ${blue})`;
+        } while (getLuminance(color) < 0.2);
+        
+        return color;
+        }
+
+        function getLuminance(color) {
+        // Convert the color to RGB values
+        const rgb = color.match(/\d+/g).map(Number);
+        
+        // Calculate the relative luminance of the color
+        const luminance = (0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]) / 255;
+        
+        return luminance;
+        }
+
+        function getRandomSpeed() {
+        return Math.floor(Math.random() * 10) + 1;
+        }
+
+        function updateBallPosition(ball) {
+        if (ball.x < 0 || ball.x > preloader.clientWidth - ball.elem.offsetWidth) {
+            ball.xSpeed = -ball.xSpeed;
+        }
+        if (ball.y < 0 || ball.y > preloader.clientHeight - ball.elem.offsetHeight) {
+            ball.ySpeed = -ball.ySpeed;
+        }
+        ball.x += ball.xSpeed;
+        ball.y += ball.ySpeed;
+        ball.elem.style.left = ball.x + "px";
+        ball.elem.style.top = ball.y + "px";
+        }
+        function detectCollisions() {
+        for (let i = 0; i < balls.length; i++) {
+            for (let j = i + 1; j < balls.length; j++) {
+            const ball1 = balls[i];
+            const ball2 = balls[j];
+            const dx = ball1.x - ball2.x;
+            const dy = ball1.y - ball2.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // Check if the balls are overlapping
+            if (distance < ball1.elem.offsetWidth / 2 + ball2.elem.offsetWidth / 2) {
+                
+                // Move the balls apart so they're no longer overlapping
+                const overlap = (ball1.elem.offsetWidth / 2 + ball2.elem.offsetWidth / 2) - distance;
+                const angle = Math.atan2(dy, dx);
+                const moveX = overlap * Math.cos(angle);
+                const moveY = overlap * Math.sin(angle);
+                ball1.x += moveX;
+                ball1.y += moveY;
+                ball2.x -= moveX;
+                ball2.y -= moveY;
+                
+                // Calculate the collision
+                const sin = Math.sin(angle);
+                const cos = Math.cos(angle);
+                const vx1 = ball1.xSpeed * cos + ball1.ySpeed * sin;
+                const vy1 = ball1.ySpeed * cos - ball1.xSpeed * sin;
+                const vx2 = ball2.xSpeed * cos + ball2.ySpeed * sin;
+                const vy2 = ball2.ySpeed * cos - ball2.xSpeed * sin;
+                const finalVx1 = ((ball1.elem.offsetWidth - ball2.elem.offsetWidth) * vx1 + 2 * ball2.elem.offsetWidth * vx2) / (ball1.elem.offsetWidth + ball2.elem.offsetWidth);
+                const finalVx2 = ((ball2.elem.offsetWidth - ball1.elem.offsetWidth) * vx2 + 2 * ball1.elem.offsetWidth * vx1) / (ball1.elem.offsetWidth + ball2.elem.offsetWidth);
+                ball1.xSpeed = finalVx1 * cos - vy1 * sin;
+                ball1.ySpeed = vy1 * cos + finalVx1 * sin;
+                ball2.xSpeed = finalVx2 * cos - vy2 * sin;
+                ball2.ySpeed = vy2 * cos + finalVx2 * sin;
+            }
+            }
+        }
+        }
+
+
+        function update() {
+        for (let i = 0; i < balls.length; i++) {
+            updateBallPosition(balls[i]);
+        }
+        detectCollisions();
+        requestAnimationFrame(update);
+        }
+
+        update();
+
+    </script>
 </body>
 
 </html>
